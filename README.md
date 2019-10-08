@@ -27,7 +27,9 @@ This is my first release on FiveM and I am still learning LUA. Will try my best 
 
 **Screenshots:**
 [details="Images"]
-![money_1|690x431](upload://b57xF7wpqw7PjxwcHAYykRZ4Mp.jpeg) ![money_2|690x431](upload://w7xI4cnuSO5NKNODALk4tKcEh2.jpeg) ![money_3|533x500](upload://3omlZ84EM76Q3yvY6mYJ0omnctN.jpeg) ![money_4|690x275](upload://r4WSbWe7uJZDEX7UUd3mPns7Nhq.jpeg) ![money_5|282x110](upload://AnRjY9q4ozarwfamnVpzkllrvWb.jpeg) 
+
+
+
 [/details]
 
 **Download:**
