@@ -1,5 +1,8 @@
 **ESX_MoneyWash**
-A money washing script for FiveM
+
+A money washing script for FiveM. 
+
+FiveM forum post: https://forum.fivem.net/t/esx-moneywash/827640
 
 **Details:**
 
