@@ -10,27 +10,24 @@ I was looking for a money wash script and couldn't find exactly what I was looki
 This is my first release on FiveM and I am still learning LUA. Will try my best to fix any bugs that may arise but as stated before it is currently working on my server and throwing no errors. I also havent noticed any high unusual MS from the script. Let me know if you do experience these issues and I will work on optimizing it.
 
 **Features:**
-[details="Features"]
+
 1. Washes dirty money instantly
 2. Ability to set multiple washing locations
 3. Ability to change tax rate to give more or less clean money
 4. Easy to setup, add more locations, and change tax rate
-[/details]
+
 
 **Installation:**
-[details="Guide"]
+
 1. Add the following to your **server.cfg**
 > start esx_moneywash
 2. Insert esx_moneywash-master into your /resources/[ESX] folder
 3. Restart/Start your server
-[/details]
+
 
 **Screenshots:**
-[details="Images"]
 
 
-
-[/details]
 
 **Download:**
 
