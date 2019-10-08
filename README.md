@@ -30,6 +30,4 @@ This is my first release on FiveM and I am still learning LUA. Will try my best 
 
 
 **Download:**
-
-**Direct:**
 <a href="https://github.com/iTzCrutchie/esx_moneywash/archive/master.zip">esx_moneywash</a>
