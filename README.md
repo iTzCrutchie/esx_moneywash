@@ -36,3 +36,9 @@ This is my first release on FiveM and I am still learning LUA. Will try my best 
 
 **Download:**
 <a href="https://github.com/iTzCrutchie/esx_moneywash/archive/master.zip">esx_moneywash</a>
+
+
+**Credits**
+https://github.com/ESX-Org/esx_society by ElPumpo
+
+https://forum.fivem.net/t/release-simple-dirty-money-laundering-0-2-04-07-updated/25493 by Oskr
