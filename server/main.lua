@@ -6,7 +6,7 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 RegisterServerEvent('esx_moneywash:washMoney')
 AddEventHandler('esx_moneywash:washMoney', function(amount)
 	local xPlayer = ESX.GetPlayerFromId(source)
-	local tax = 0.65
+	local tax = Config.taxRate
 	amount = ESX.Math.Round(tonumber(amount))
 	washedCash = amount * tax
 	washedTotal = ESX.Math.Round(tonumber(washedCash))
