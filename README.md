@@ -27,7 +27,11 @@ This is my first release on FiveM and I am still learning LUA. Will try my best 
 
 **Screenshots:**
 
-
+![Image1](https://forum.fivem.net/uploads/default/original/4X/0/1/4/0140b63258e86613e5614a0c125cb2d685cffe31.jpeg)
+![Image2](https://forum.fivem.net/uploads/default/original/4X/0/3/a/03a18bd911fa145b998ac4254c0cc97d470fcda0.jpeg)
+![Image3](https://forum.fivem.net/uploads/default/original/4X/1/7/c/17c7798c9e9415d5a9657f2cf6bd41444a065f8f.jpeg)
+![Image4](https://forum.fivem.net/uploads/default/original/4X/b/d/c/bdc9edf9d6e81bf540932c06abb896b078452e64.jpeg)
+![Image5](https://forum.fivem.net/uploads/default/original/4X/f/f/0/ff00bb40a4965c635b3b90b5389ab2912fa3e0eb.jpeg)
 
 **Download:**
 <a href="https://github.com/iTzCrutchie/esx_moneywash/archive/master.zip">esx_moneywash</a>
