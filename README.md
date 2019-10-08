@@ -22,7 +22,8 @@ This is my first release on FiveM and I am still learning LUA. Will try my best 
 1. Add the following to your **server.cfg**
 > start esx_moneywash
 2. Insert esx_moneywash-master into your /resources/[ESX] folder
-3. Restart/Start your server
+3. Rename esx_moneywash-master to esx_moneywash
+4. Restart/Start your server
 
 
 **Screenshots:**
