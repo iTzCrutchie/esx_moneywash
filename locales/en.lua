@@ -1,5 +1,6 @@
 Locales['en'] = {
 	['you_have_washed'] 		= 'You have washed ~r~$',
+	['you_have_washed_waiting'] = 'You have ~r~dirty waiting to be washed. Time:  ',
 	['dirty_money'] 			= ' dirty money.',
 	['you_have_received'] 		= ' ~s~You received a total of ~g~$',
 	['clean_money'] 			= ' clean money',

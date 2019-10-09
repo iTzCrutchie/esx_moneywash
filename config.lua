@@ -8,6 +8,13 @@ Config.Type 			= 1
 
 Config.taxRate = 0.65  --65% of the dirty you will get back in clean
 
+Config.enableTimer = true -- Enable ONLY IF you want a timer on the money washing. Keep in mind the Player does not have to stay at the wash for it to actually wash the money.
+local second = 1000
+local minute = 60 * second
+local hour = 60 * minute
+
+Config.timer = 5 * second -- Time it takes to wash money. The * amount will determine if its hours, second, or minutes.
+
 Config.Zones = {
 
 	laundryMat = {

@@ -60,15 +60,17 @@ function OpenWashedMenu(zone)
 						TriggerServerEvent('esx_moneywash:washMoney', amount)
 					end
 				end, function(data, menu)
-					menu.closeAll()
+					menu.close()
 				end)
 			end
 			end, function(data, menu)
-				menu.closeAll()
-			
+				
+				menu.close()
+					
 				CurrentAction	 = 'wash_menu'
 				CurrentActionMsg = _U('press_menu')
-				CurrentActionData = {zone = zone}			
+				CurrentActionData = {zone = zone}
+					
 			
 		end)
 
