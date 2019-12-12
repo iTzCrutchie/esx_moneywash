@@ -18,7 +18,7 @@ function checkVersion()
         local patchnotesArray = versionArray.patchnotes
         local patchnotes = ""
         for _, line in pairs(patchnotesArray) do
-          patchnote = patchnotes..line.."\n"
+          patchnotes = patchnotes..line.."\n"
         end
 
         print("A new version of esx_moneywash is available: "..VERSION)
