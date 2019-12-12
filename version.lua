@@ -21,7 +21,7 @@ function checkVersion()
           patchnotes = patchnotes..line.."\n"
         end
 
-        print("A new version of esx_moneywash is available: "..VERSION)
+        print("A new version of esx_moneywash is available: "..gitVersion)
         print("patchnotes: \n"..patchnotes)
         print("\n=================================\n")
       end
