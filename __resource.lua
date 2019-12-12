@@ -1,6 +1,6 @@
 -------------------------------------------
 ------- [ Money Wash by Crutchie ] --------
------------- [ Version 0.0.2 ] ------------
+------------ [ Version 0.1.0 ] ------------
 -------------------------------------------
 
 resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
@@ -14,6 +14,7 @@ server_scripts {
 	'locales/en.lua',
 	'config.lua',
 	'server/main.lua',
+	'version.lua'
 }
 
 client_scripts {
