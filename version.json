@@ -1,8 +1,8 @@
 {
 		"version":"0.1.0",
 		"patchnotes" : [
-			"Added ability to set authorized jobs",
-			"Updated Config file to allow for authorized jobs",
-			"Added into config instructions on how to set up new zones and allow jobs"
+			"- Added ability to set authorized jobs",
+			"- Updated Config file to allow for authorized jobs",
+			"- Added into config instructions on how to set up new zones and allow jobs"
 		]
 }
