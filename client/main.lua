@@ -16,7 +16,6 @@ local CurrentAction				= nil
 local CurrentActionMsg			= ''
 local CurrentActionData			= {}
 
-
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
@@ -29,6 +28,11 @@ Citizen.CreateThread(function()
 
 	ESX.PlayerData = ESX.GetPlayerData()
 
+end)
+
+RegisterNetEvent('esx:setJob')
+AddEventHandler('esx:setJob', function(job)
+	ESX.PlayerData.job = job
 end)
 
 
@@ -95,15 +99,22 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
-		local coords = GetEntityCoords(PlayerPedId())
+		local coords 		= GetEntityCoords(PlayerPedId())
+		
+		for k,zoneID in pairs(Config.Zones) do
 
-		for k,v in pairs(Config.Zones) do
-			for i = 1, #v.Pos, 1 do
-				if(Config.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos[i].x, v.Pos[i].y, v.Pos[i].z, true) < Config.DrawDistance) then
-					DrawMarker(Config.Type, v.Pos[i].x, v.Pos[i].y, v.Pos[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, false, false, false)
+			local isAuthorized 	= Authorized(zoneID)
+		
+			for i = 1, #zoneID.Pos, 1 do
+			
+				if isAuthorized and (Config.Type ~= -1 and GetDistanceBetweenCoords(coords, zoneID.Pos[i].x, zoneID.Pos[i].y, zoneID.Pos[i].z, true) < Config.DrawDistance) then
+					DrawMarker(Config.Type, zoneID.Pos[i].x, zoneID.Pos[i].y, zoneID.Pos[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, false, false, false)
 				end
+				
 			end
+			
 		end
+		
 	end
 end)
 
@@ -115,27 +126,50 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 		local coords		= GetEntityCoords(PlayerPedId())
 		local isInMarker	= false
-		local currentZone = nil
+		local currentZone 	= nil
 		
+		for k,zoneID in pairs(Config.Zones) do
 		
-		for k,v in pairs(Config.Zones) do
-			for i = 1, #v.Pos, 1 do
-				if(GetDistanceBetweenCoords(coords, v.Pos[i].x, v.Pos[i].y, v.Pos[i].z, true) < Config.Size.x) then
+			local isAuthorized 	= Authorized(zoneID)
+			
+			for i = 1, #zoneID.Pos, 1 do
+				if isAuthorized and (GetDistanceBetweenCoords(coords, zoneID.Pos[i].x, zoneID.Pos[i].y, zoneID.Pos[i].z, true) < Config.Size.x) then
 					isInMarker = true
 					currentZone = k
 				end
 			end
+			
 		end
+		
 		if isInMarker and not hasAlreadyEnteredMarker then
 			hasAlreadyEnteredMarker = true
 			TriggerEvent('esx_moneywash:hasEnteredMarker', currentZone)
 		end
+		
 		if not isInMarker and hasAlreadyEnteredMarker then
 			hasAlreadyEnteredMarker = false
 			TriggerEvent('esx_moneywash:hasExitedMarker', LastZone)
 		end
+		
 	end
 end)
+
+-- Get authorized jobs
+function Authorized(zoneID)
+	if ESX.PlayerData.job == nil then
+		return false
+	end
+	
+	for _,job in pairs(zoneID.Jobs) do
+		
+		if job == 'any' or job == ESX.PlayerData.job.name then
+			return true
+		end
+	end
+	
+	return false
+	
+end
 
 -- Key Controls
 Citizen.CreateThread(function()
@@ -156,4 +190,3 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
-		
