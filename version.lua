@@ -15,7 +15,7 @@ function checkVersion()
 
       if(VERSION ~= gitVersion) then
         print("\n=================================\n")
-        local patchnoteArray = versionArray.patchnotes
+        local patchnotesArray = versionArray.patchnotes
         local patchnotes = ""
         for _, line in pairs(patchnotesArray) do
           patchnote = patchnotes..line.."\n"
