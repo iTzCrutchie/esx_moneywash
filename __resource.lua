@@ -1,13 +1,13 @@
 -------------------------------------------
 ------- [ Money Wash by Crutchie ] --------
------------- [ Version 0.1.0 ] ------------
+------------ [ Version 0.1.1 ] ------------
 -------------------------------------------
 
 resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 
 description 'ESX Money Washing'
 
-version '0.1.0'
+version '0.1.1'
 
 server_scripts {
 	'@es_extended/locale.lua',
