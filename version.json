@@ -1,9 +1,7 @@
 {
-		"version":"0.1.1",
+		"version":"0.1.2",
 		"patchnotes" : [
-			"- Added ability to set authorized jobs",
-			"- Updated Config file to allow for authorized jobs",
-			"- Added into config instructions on how to set up new zones and allow jobs"
-			"- 0.1.1 Change - Fixed timer to display in REAL time left for washing"
+			"- Removed __resource.lua to update to newer manifest",
+			"- Added fxmanifest.lua to bring resource up to newest manifest"
 		]
 }
