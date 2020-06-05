@@ -16,15 +16,28 @@ function secondsToClock(seconds)
 end
 
 RegisterServerEvent('esx_moneywash:washMoney')
-AddEventHandler('esx_moneywash:washMoney', function(amount)
+AddEventHandler('esx_moneywash:washMoney', function(amount, zone)
 	local xPlayer = ESX.GetPlayerFromId(source)
-	local tax = Config.taxRate
+	local tax
+	local timer
+	local enableTimer = false
+	print(zone)
+	for k, spot in pairs (Config.Zones) do
+		if zone == k then
+			tax = spot.TaxRate
+			enableTimer = spot.enableTimer
+			timer = spot.timer
+		end
+	end
+	print(tax)
 	amount = ESX.Math.Round(tonumber(amount))
 	washedCash = amount * tax
 	washedTotal = ESX.Math.Round(tonumber(washedCash))
+
+	print(tax.. ' ' .. timer)
 	
-	if Config.enableTimer == true then
-		local timer = Config.timer
+	if enableTimer == true then
+		--local timer = Config.timer
 		local timeClock = ESX.Math.Round(timer / 1000)
 	
 		if amount > 0 and xPlayer.getAccount('black_money').money >= amount then

@@ -1,7 +1,11 @@
 {
-		"version":"0.1.2",
+		"version":"0.2.0",
 		"patchnotes" : [
-			"- Removed __resource.lua to update to newer manifest",
-			"- Added fxmanifest.lua to bring resource up to newest manifest"
+			"- Add per spot tax rates. IE each spot has a different tax rate. Follow config file to implement",
+			"- Add per spot timers. IE each spot can either have a timer or not have a timer",
+			"- Add per spot timer lengths. IE each spot can have a different time to actually wash the money.",
+			"- Add size, color, and type on a per spot basis. IE each wash zone can have a different color size or marker type",
+			"- Reduce default Draw Amount to 10. Should improve performance a little bit instead of drawing the marker when so far away. Can be changed if you want though."
+			
 		]
 }

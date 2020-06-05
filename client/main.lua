@@ -38,6 +38,7 @@ end)
 
 -- Washed Menu
 function OpenWashedMenu(zone)
+	print(zone)
 	local elements = {
 		{label = _U('wash_money'), 	value = 'wash_money'},
 		--{label = _U('no'),			value = 'no'}
@@ -61,7 +62,7 @@ function OpenWashedMenu(zone)
 						ESX.ShowNotification(_U('invalid_amount'))
 					else
 						menu.close()
-						TriggerServerEvent('esx_moneywash:washMoney', amount)
+						TriggerServerEvent('esx_moneywash:washMoney', amount, zone)
 					end
 				end, function(data, menu)
 					menu.close()
@@ -107,8 +108,8 @@ Citizen.CreateThread(function()
 		
 			for i = 1, #zoneID.Pos, 1 do
 			
-				if isAuthorized and (Config.Type ~= -1 and GetDistanceBetweenCoords(coords, zoneID.Pos[i].x, zoneID.Pos[i].y, zoneID.Pos[i].z, true) < Config.DrawDistance) then
-					DrawMarker(Config.Type, zoneID.Pos[i].x, zoneID.Pos[i].y, zoneID.Pos[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.Size.x, Config.Size.y, Config.Size.z, Config.Color.r, Config.Color.g, Config.Color.b, 100, false, true, 2, false, false, false, false)
+				if isAuthorized and (zoneID.Type ~= -1 and GetDistanceBetweenCoords(coords, zoneID.Pos[i].x, zoneID.Pos[i].y, zoneID.Pos[i].z, true) < Config.DrawDistance) then
+					DrawMarker(zoneID.Type, zoneID.Pos[i].x, zoneID.Pos[i].y, zoneID.Pos[i].z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, zoneID.Size.x, zoneID.Size.y, zoneID.Size.z, zoneID.Color.r, zoneID.Color.g, zoneID.Color.b, 100, false, true, 2, false, false, false, false)
 				end
 				
 			end
@@ -133,7 +134,7 @@ Citizen.CreateThread(function()
 			local isAuthorized 	= Authorized(zoneID)
 			
 			for i = 1, #zoneID.Pos, 1 do
-				if isAuthorized and (GetDistanceBetweenCoords(coords, zoneID.Pos[i].x, zoneID.Pos[i].y, zoneID.Pos[i].z, true) < Config.Size.x) then
+				if isAuthorized and (GetDistanceBetweenCoords(coords, zoneID.Pos[i].x, zoneID.Pos[i].y, zoneID.Pos[i].z, true) < zoneID.Size.x) then
 					isInMarker = true
 					currentZone = k
 				end

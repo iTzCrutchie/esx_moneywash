@@ -1,19 +1,12 @@
 Config 					= {}
 
 Config.Locale 			= 'en'
-Config.DrawDistance 	= 100
-Config.Size 			= {x = 1.5, y = 1.5, z = 1.5}
-Config.Color 			= {r = 255, g = 120, b = 0}
-Config.Type 			= 1
+Config.DrawDistance 	= 10
 
-Config.taxRate = 0.65  --65% of the dirty you will get back in clean
 
-Config.enableTimer = true -- Enable ONLY IF you want a timer on the money washing. Keep in mind the Player does not have to stay at the wash for it to actually wash the money.
 local second = 1000
 local minute = 60 * second
 local hour = 60 * minute
-
-Config.timer = 5 * second -- Time it takes to wash money. The * amount will determine if its hours, second, or minutes.
 
 --[[ 
 	Below are the zones for laundering. You can set multiple zones just follow the format below. 
@@ -33,32 +26,49 @@ Config.timer = 5 * second -- Time it takes to wash money. The * amount will dete
 			--'any', -- SET THE 'any' TAG TO ALLOW ALL JOBS INCLUDING POLICE TO USE THE LOCATION
 			--'miner',
 			--'cardealer'
-		}
+		},
+		TaxRate = 0.50, -- set taxrate per spot. Default is 0.5 or 50% of the dirty you will get back in clean
+		enableTimer = false, -- Enable ONLY IF you want a timer on the money washing. Keep in mind the Player does not have to stay at the wash for it to actually wash the money.
+		timer = 5 * second -- Actual Timer for the spot. The * amount will determine if its hours, second, or minutes. which are found above. DEFAULT: 5 * second
 	},
 	
 ]]
 
 Config.Zones = {
 	
-	{	
+	['LaundryMat'] = {	
 		Pos = { 
-			{x = 1122.5 , y = -3194.98 , z = -41.60},
+			{x = 1122.5 , y = -3194.98 , z = -40.60},
 		},
 		
 		Jobs = {
 			--'any', -- set to 'any' to allow the location for any player regardless of job
-			'cardealer'
-		}
+			'miner'
+		},
+		TaxRate = 0.50, -- set taxrate per spot. Default is 0.5 or 50% of the dirty you will get back in clean
+		enableTimer = false, -- Enable ONLY IF you want a timer on the money washing. Keep in mind the Player does not have to stay at the wash for it to actually wash the money.
+		timer = 5 * second, -- Actual Timer for the spot. The * amount will determine if its hours, second, or minutes. which are found above. DEFAULT: 5 * second
+		Size = {x = 1.5, y = 1.5, z = 1.5},
+		Color = {r = 120, g = 120, b = 0},
+		Type = 27,
+	
 	},
 	
-	--[[{
+	['Warehouse'] = {
 		Pos = {
 			{x = 1090.84 , y = -2233.43 , z = 31.5}
 		},
 		
 		Jobs = {
-			--'miner',
-			'cardealer'
-		}
-	},]]
+			--'any', -- set to 'any' to allow the location for any player regardless of job
+			'fueler'
+		},
+		TaxRate = 0.85, -- set taxrate per spot. Default is 0.85 or 85% of the dirty you will get back in clean
+		enableTimer = true, -- Enable ONLY IF you want a timer on the money washing. Keep in mind the Player does not have to stay at the wash for it to actually wash the money.
+		timer = 5 * second, -- Actual Timer for the spot. The * amount will determine if its hours, second, or minutes. which are found above. DEFAULT: 5 * second
+		Size = {x = 1.5, y = 1.5, z = 1.5},
+		Color = {r = 255, g = 120, b = 0},
+		Type = 1,
+	
+	}
 }
