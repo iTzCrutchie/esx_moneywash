@@ -8,7 +8,7 @@ AddEventHandler("onResourceStart", function(resource)
 end)
 
 function checkVersion()
-  PerformHttpRequest("https://raw.githubusercontent.com/iTzCrutchie/esx_moneywash/master/version.json", function(err, text, h)
+  PerformHttpRequest("https://raw.githubusercontent.com/iTzCrutchie/esx_moneywash/dev/version.json", function(err, text, h)
     if err == 200 then
       local versionArray = json.decode(text)
       local gitVersion = versionArray.version
